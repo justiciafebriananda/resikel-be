@@ -30,7 +30,7 @@ db.connect((err) => {
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://resikel.airf.my.id",
     credentials: true,
   })
 );
