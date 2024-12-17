@@ -30,7 +30,7 @@ db.connect((err) => {
 
 app.use(
   cors({
-    origin: "https://resikel.airf.my.id",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
@@ -51,14 +51,14 @@ app.post("/login", (req, res) => {
 });
 
 // Session
-app.use(
-  session({
-    secret: "your-secret-key", // Ganti dengan kunci rahasia Anda
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false }, // Untuk pengembangan lokal, set ke false
-  })
-);
+// app.use(
+//   session({
+//     secret: "your-secret-key", // Ganti dengan kunci rahasia Anda
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: { secure: false }, // Untuk pengembangan lokal, set ke false
+//   })
+// );
 
 app.get("/tb_area_transaksi_wilayah", (req, res) => {
   const query = "SELECT * FROM tb_area_transaksi_wilayah";
