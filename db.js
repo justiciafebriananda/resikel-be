@@ -17,6 +17,7 @@ const db = mysql.createConnection({
   user: "root",
   password: "",
   database: "db_resikel",
+  port: 3307,
 });
 
 // Test koneksi database
@@ -30,7 +31,8 @@ db.connect((err) => {
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://resikel.airf.my.id"],
     credentials: true,
   })
 );
